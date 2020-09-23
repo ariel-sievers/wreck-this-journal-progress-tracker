@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Search Results</title>
+
+        <script src="/__scripts/search.min.js"></script>
+        <script src="/__scripts/cookie.min.js"></script>
+        <script src="/__services/searchService.min.js"></script>
+        <script src="/__services/selectionService.min.js"></script>
+        <script src="/__services/pagesService.min.js"></script>
+        <script src="/__classes/page.min.js"></script>
+        <script src="/__scripts/pages.min.js"></script>
+        <script src="https://kit.fontawesome.com/281503fce6.js" crossorigin="anonymous"></script>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <!-- other styles -->
+        <link rel="stylesheet" href="/__styles/results.min.css">
+        <link rel="stylesheet" href="/__styles/styles.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <i class="fas fa-long-arrow-alt-left" onclick="goBack()"></i>
+            <div id="search-header">
+                <h1>Search</h1>
+                <i><span id="terms"></span></i>
+                <div id="search-options">
+                    <input type="search" placeholder="search pages..." onkeydown="searchOnEnter(event)">
+                    <button onclick="search()"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div id="results"></div>
+        </div>
+    </body>
+</html>

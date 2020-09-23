@@ -1,0 +1,353 @@
+body {
+    padding-bottom: 30vh;
+}
+
+#ideas-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ideas-header button {
+    white-space: nowrap;
+}
+
+#ideas-form {
+    text-align: center;
+    height: 0;
+    transition: height 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+#ideas-form.show-form {
+    height: 56px;
+}
+
+#ideas-form button {
+    height: auto !important;
+}
+
+#idea-list {
+    font-size: 1.25rem;
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+}
+
+#idea-list li {
+    overflow-wrap: break-word;
+    display: flex;
+    margin: -10px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#idea-list li span {
+    width: 90%;
+}
+
+button {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+    margin-top: 0.83em !important;
+    height: 100%;
+}
+
+button i {
+    font-size: smaller
+}
+
+#ideas-form button, button#toggle-form {
+    background-color: var(--main-color);
+}
+
+button#clear-ideas {
+    background-color: var(--danger);
+}
+
+#idea-list button {
+    background-color: transparent;
+    color: var(--danger);
+    font-size: unset;
+    float: right;
+}
+
+hr {
+    height: 0;
+    border: solid 1px lightgrey;
+    border-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.wrapper {
+    margin: 3rem;
+    margin-top: 5rem;
+    border: 2px dashed dimgrey;
+    border-radius: 25px;
+    min-width: 333px;
+    width: 50vw;
+    text-align: center;
+}
+
+#title-content {
+    font-family: var(--writing-font);
+    font-size: 30px;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    position: relative;
+}
+
+#favorite {
+    color: gold;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: calc(2.25rem * 1.5);
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+#favorite::before {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--fade-in);
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+#favorite:hover::before {
+    content: 'favorite this page';
+    opacity: 1;
+}
+
+#favorite:hover {
+    cursor: pointer;
+}
+
+#favorite.favorite:hover::before {
+    content: 'unfavorite this page';
+}
+
+.back-arrow {
+    font-size: 45px;
+    align-self: flex-start;
+    margin: 1rem;
+    position: absolute;
+    color: var(--main-color);
+    z-index: 2;
+}
+
+.back-arrow:hover {
+    cursor: pointer
+}
+
+.back-arrow::after {
+    content: '';
+    opacity: 0;
+    transition: var(--fade-in);
+    position: absolute;
+    font-family: var(--writing-font);
+    font-size: 30px;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    transition: var(--fade-in);
+}
+
+.back-arrow:hover::after {
+    content: 'back to list';
+    opacity: 1;
+}
+
+#complete {
+    font-family: var(--writing-font);
+    font-size: 30px;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#complete::after {
+    content: 'incomplete';
+    color: var(--danger);
+}
+
+#complete:hover::after {
+    content: 'mark as complete';
+    color: var(--main-color);
+}
+
+.fa-check {
+    color: var(--main-color);
+    top: 0.5rem;
+    right: -1.5ch;
+}
+
+.fa-times {
+    color: var(--danger);
+    top: 0.65rem;
+    right: -1ch;
+}
+
+.fa-check, .fa-times {
+    position: absolute;
+}
+ 
+.fa-check, #complete.complete:hover .fa-check, .complete .fa-times, #complete:hover .fa-times {
+    display: none;
+}
+
+.fa-times, #complete.complete:hover .fa-times, #complete:hover .fa-check {
+    display: block;
+}
+
+#complete.complete .fa-check {
+    display: block;
+    right: -1.5ch;
+}
+
+#complete.complete .fa-times {
+    display: none;
+    right: -1ch;
+}
+
+#complete.complete::after {
+    content: 'complete';
+    color: var(--main-color);
+    text-align: center;
+}
+
+#complete.complete:hover::after {
+    content: 'mark as incomplete';
+    color: var(--danger);
+}
+
+.fa-minus-square::after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    color: var(--danger);
+    transition: var(--fade-in);
+    font-family: var(--writing-font);
+}
+
+.fa-minus-square:hover::after {
+    content: 'remove';
+    opacity: 1;
+    top: 2rem;
+    left: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    font-family: var(--writing-font);
+    color: var(--main-color);
+    background-color: white;
+    box-shadow: var(--hard-shadow);
+    z-index: 2;
+}
+
+#pagination {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    left: -50%;
+    transform: translateX(50%);
+}
+
+#pagination p {
+    white-space: nowrap;
+}
+
+footer p {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+footer p:hover:not(:nth-child(2)) {
+    cursor: pointer;
+}
+
+footer input {
+    width: 5ch;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+footer button {
+    height: auto;
+    background-color: var(--main-color);
+    margin-left: 0 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.disabled {
+    color: dimgrey;
+    cursor: default !important;
+}
+
+@media (max-width: 768px) {
+    #title-content {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .back-arrow {
+        margin-left: 0;
+        margin-top: -0.5rem;
+    }
+
+    #title-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    footer {
+        height: 25vh;
+    }
+
+    #pagination {
+        width: 100%;
+        transform: none;
+    }
+
+    footer p, footer input {
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        border: 0;
+    }
+
+    #ideas-header {
+        padding-left: 1rem;
+    }
+}

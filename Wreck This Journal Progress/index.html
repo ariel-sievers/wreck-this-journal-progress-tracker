@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Wreck this Journal -- Completed Pages</title>
+
+        <script src="__scripts/search.min.js"></script>
+        <script src="__scripts/checkboxValues.min.js"></script>
+        <script src="__scripts/cookie.min.js"></script>
+        <script src="__services/searchService.min.js"></script>
+        <script src="__services/selectionService.min.js"></script>
+        <script src="__services/pagesService.min.js"></script>
+        <script src="__classes/page.min.js"></script>
+        <script src="__scripts/pages.min.js"></script>
+        <script src="https://kit.fontawesome.com/281503fce6.js" crossorigin="anonymous"></script>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <!-- other styles -->
+        <link rel="stylesheet" href="/__styles/styles.min.css">
+        <link rel="stylesheet" href="__styles/checkbox_list.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <h1>Completed Pages</h1>
+            <div>
+                <button class="selected-btn view-btn" onclick="gridView()"><i class="fas fa-th-large"></i></button>
+                <button class="view-btn"><i class="fas fa-bars" onclick="listView()"></i></button>
+            </div>
+        </div>
+        <div>
+            <div id="search-options">
+                <input type="search" placeholder="search pages..." onkeydown="searchOnEnter(event)">
+                <button onclick="search()"><i class="fas fa-search"></i></button>
+                <label>
+                    filter by
+                    <select onchange="filter(event)">
+                        <option>none</option>
+                        <option>complete</option>
+                        <option>incomplete</option>
+                        <option>favorites</option>
+                    </select>
+                </label>
+            </div>
+            <form id="checkbox-list" onsubmit="updateCookie()" onreset="onReset()">
+                <div class="buttons">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Save Changes</button>
+                </div>
+                <div id="list" class="grid"></div>
+                <div id="paginator"></div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Page Details</title>
+
+        <script src="/__services/selectionService.min.js"></script>
+        <script src="/__services/pagesService.min.js"></script>
+        <script src="/__scripts/cookie.min.js"></script>
+        <script src="/__scripts/details.min.js"></script>
+        <script src="https://kit.fontawesome.com/281503fce6.js" crossorigin="anonymous"></script>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <!-- other styles -->
+        <link rel="stylesheet" href="/__styles/details.min.css">
+        <link rel="stylesheet" href="/__styles/styles.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <template>
+            <div class="container page-details">
+                <i class="fas fa-long-arrow-alt-left back-arrow" onclick="goBack()"></i>
+                <p id="title-content">
+                    <span id="page-number"></span>
+                    <span id="page-title"></span>
+                    <br>
+                    <span id="complete" onclick="markAsComplete()">
+                        <i class="fas fa-check"></i>
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span id="favorite" onclick="favorite()"></span>
+                </p>
+                <div class="wrapper">
+                    <div id="ideas-header">
+                        <h2>Ideas</h2>
+                        <button id="toggle-form" onclick="toggleIdeaForm()">Add Idea <i class="fas fa-plus"></i></button>
+                        <button id="clear-ideas" onclick="clearIdeas()">clear</button>
+                    </div>
+                    <div id="ideas-form">
+                        <input type="text" placeholder="enter idea here..." onkeyup="addIdeaOnEnter(event)">
+                        <button onclick="addIdea()">add</button>
+                    </div>
+                    <ol id="idea-list"></ol>
+                </div>
+            </div>
+        </template>
+        <footer>
+            <div id="pagination">
+                <p onclick="prevPage()"><i class="fas fa-long-arrow-alt-left"></i> prev</p>
+                <p><input type="number" min="1" max="216" onkeyup="jumpOnEnter(event)"> of 216</p>
+                <p onclick="nextPage()">next <i class="fas fa-long-arrow-alt-right"></i></p>
+            </div>
+        </footer>
+    </body>
+</html>
+
+
