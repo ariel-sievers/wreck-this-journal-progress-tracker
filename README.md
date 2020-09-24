@@ -1,5 +1,6 @@
 # wreck-this-journal-progress-tracker
 A site made with HTML, JS, and CSS to track progress of completed pages for Wreck this Journal by Keri Smith, as well as favorite pages and add ideas.
+Deployed using Netlify at: https://wreckthisjournalprogress.netlify.app
 
 ## main page
 Shows the list of pages as "Page #", with a checkbox to mark as complete. If favorited, a star will be shown next to the page. By default, this list is
