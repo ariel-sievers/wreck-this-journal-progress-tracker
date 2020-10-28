@@ -206,7 +206,7 @@ hr {
     position: absolute;
 }
  
-.fa-check, #complete.complete:hover .fa-check, .complete .fa-times, #complete:hover .fa-times {
+#complete .fa-check, #complete.complete:hover .fa-check, .complete .fa-times, #complete:hover .fa-times {
     display: none;
 }
 
