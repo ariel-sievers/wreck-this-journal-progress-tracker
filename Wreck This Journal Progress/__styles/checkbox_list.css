@@ -174,11 +174,12 @@ label {
     top: 50%;
     right: 50px;
     color: gold;
-    display: none;
+    visibility: hidden;
+    display: inline-block;
 }
 
 .favorite {
-    display: inline-block;
+    visibility: visible;
 }
 
 .favorite::after, .fa-file-alt::after {
